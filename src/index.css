@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #000000;
+    color: #d1d4dc;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Trebuchet MS', Roboto, sans-serif;
+  }
+}
+
+/* Slanted action button shape seen on TradingView hero */
+.tv-slant-btn {
+  transform: skew(-10deg);
+  transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+}
+.tv-slant-btn > span {
+  display: inline-block;
+  transform: skew(10deg);
+}
+.tv-slant-btn:hover {
+  transform: skew(-10deg) scale(1.02);
+  filter: brightness(1.06);
+}
+
+/* Ambient glow for TradingView CTA */
+.glow-cyan-violet {
+  background: linear-gradient(135deg, #0088ff 0%, #833ab4 100%);
+  box-shadow: 0 0 16px rgba(41, 98, 255, 0.4);
+}
+.glow-cyan-violet:hover {
+  box-shadow: 0 0 24px rgba(131, 58, 180, 0.6);
+}
+
+/* Custom subtle scrollbar for horizontal overflow */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
